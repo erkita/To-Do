@@ -3,8 +3,8 @@
 --------------
 ### Demonstration
 Following command will be demonstrated:<br />
-```--csv-file todos.csv --add-todo --todo-text "NEW TASK DEMO" --due 4/30/2021 --category home --complete-todo 1 --sort-by-date --display```
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/82434097/116769345-4b917080-a9f0-11eb-95a7-174b75bf8f30.gif)
+```--csv-file todos.csv --add-todo --todo-text "NEW TASK DEMO" --due 4/30/2021 --category home --complete-todo 1 --sort-by-date --display```<br />
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/82434097/116769345-4b917080-a9f0-11eb-95a7-174b75bf8f30.gif)<br />
 ### Overview
 
 This command line To-Do application enables users to add and keep track the status of their tasks by due date, category, priority, and completion status. The application stores all its tasks in "todos.csv". The CSV file is a plain text file, with its first line as the headers for each column. The task data is organized into columns separated by a comma.<br />

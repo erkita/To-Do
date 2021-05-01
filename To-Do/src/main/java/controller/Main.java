@@ -9,7 +9,7 @@ import view.ToDoDisplay;
 public class Main {
 
   public static void main(String[] args) throws IOException {
-    CommandLineParser parser = null;
+    CommandLineParser parser;
     Config config = new Config();
     try {
       parser = new CommandLineParser(args, config.getOptions());
@@ -17,9 +17,7 @@ public class Main {
       TaskManager task = new TaskManager(parser, toDoList);
       task.updateCsvFile();
       ToDoDisplay display = new ToDoDisplay(toDoList);
-      for (ToDo filteredTask : display.displayManager(parser)) {
-        System.out.println(filteredTask);
-      }
+      display.displayManager(parser);
       System.out.println(System.lineSeparator());
     } catch (Exception ioe) {
       System.out.println("Something went wrong! " + ioe.getMessage());

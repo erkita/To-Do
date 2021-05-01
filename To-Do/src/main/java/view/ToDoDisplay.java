@@ -93,7 +93,11 @@ public class ToDoDisplay {
       List<ToDo> displayIncomplete = displayFilterByIncomplete(parser, displayTodos);
       List<ToDo> displayCategory = displayFilterByCategory(parser, displayIncomplete);
       List<ToDo> sortDate = displaySortByDate(parser, displayCategory);
-      return displaySortByPriority(parser, sortDate);
+      List<ToDo> displayTasks = displaySortByPriority(parser, sortDate);
+      for (ToDo displayTask : displayTasks) {
+        System.out.println(displayTask);
+      }
+      return displayTasks;
     }
     return this.toDos;
   }

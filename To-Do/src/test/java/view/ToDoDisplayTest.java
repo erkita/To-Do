@@ -158,7 +158,6 @@ public class ToDoDisplayTest {
     assertEquals(incompleteDisplay.displayManager(parserCat), incompleteList);
   }
 
-  // note: sort by date tested here, shows up not tested in Jacoco
   @Test
   public void sortByDate() throws InvalidArgumentException, InvalidPairException {
     ToDo todo1 = new ToDo.Builder("Finish HW9").addDueDate("03/22/2020").addPriority("1")
@@ -168,18 +167,21 @@ public class ToDoDisplayTest {
     ToDo todo3 = new ToDo.Builder("clean house").addDueDate("10/21/2021").addPriority("2")
         .addCategory("home").markComplete(false).addId("2").build();
 
-    List<ToDo> newList = new ArrayList<>();
-    newList.add(todo1);
-    newList.add(todo3);
-    String[] arg = new String[]{CSV, "todosTest.csv", SORT_BY_DATE};
+    List<ToDo> expected = new ArrayList<>();
+    expected.add(todo1);
+    expected.add(todo3);
+    String[] arg = new String[]{CSV, "todosTest.csv", SORT_BY_DATE, DISPLAY};
     CommandLineParser parserDate = new CommandLineParser(arg, options);
-    ToDoDisplay myDisplay = new ToDoDisplay(newList);
+    List<ToDo> sortByDate = new ArrayList<>();
+    sortByDate.add(todo1);
+    sortByDate.add(todo2);
+    sortByDate.add(todo3);
+    ToDoDisplay myDisplay = new ToDoDisplay(sortByDate);
 
-    assertEquals(myDisplay.displayManager(parserDate), newList);
+    assertEquals(expected, myDisplay.displayManager(parserDate));
 
   }
 
-  // note: sort by priority tested here, shows up not tested in Jacoco
   @Test
   public void sortByPriority() throws InvalidArgumentException, InvalidPairException {
     ToDo todo1 = new ToDo.Builder("Finish HW9").addDueDate("03/22/2020").addPriority("1")
