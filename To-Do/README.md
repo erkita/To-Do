@@ -31,3 +31,8 @@ The program will accept the following commands:<br />
 * ```--show-category <category>```: Displays To-Do's with specified category.
 * ```--sort-by-date```: Displays To-Do's sorted by ascending date order. Cannot be combined with --sort-by-priority.
 * ```--sort-by-priority```: Displays To-Do's sorted by priority. Cannot be combined with --sort-by-date.
+
+### Program Demonstration
+Following command will be demonstrated: <br />
+```--csv-file todos.csv --add-todo --todo-text "NEW TASK DEMO" --due 4/30/2021 --category home --complete-todo 1 --sort-by-date --display```<br />
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/82434097/116769345-4b917080-a9f0-11eb-95a7-174b75bf8f30.gif)
